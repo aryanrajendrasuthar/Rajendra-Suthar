@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, Diamond } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const NAV = [
   { href: "/",         label: "Home"     },
@@ -36,18 +37,15 @@ export default function Navbar() {
       >
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 shrink-0">
-            <div className="flex h-9 w-9 items-center justify-center rounded bg-jf-lime">
-              <Diamond className="h-5 w-5 text-black" />
-            </div>
-            <div>
-              <div className="font-display text-lg font-bold leading-none text-white tracking-wider">
-                JAYRAJ
-              </div>
-              <div className="text-[9px] tracking-[0.3em] text-jf-lime leading-none">
-                FABRICATION
-              </div>
-            </div>
+          <Link href="/" className="shrink-0">
+            <Image
+              src="/logo/jf-logo.jpeg"
+              alt="Jayraj Fabrication"
+              width={180}
+              height={50}
+              className="h-10 w-auto object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop nav */}

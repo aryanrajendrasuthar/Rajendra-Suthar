@@ -11,8 +11,10 @@ const nextConfig = {
       { protocol: "https", hostname: "**.supabase.co" },
     ],
   },
-  // Silence noisy metadataBase warning during development
-  experimental: {},
+  experimental: {
+    // Tree-shake large icon/component packages to avoid webpack chunk factory collisions
+    optimizePackageImports: ["lucide-react", "@supabase/supabase-js", "@supabase/ssr"],
+  },
 };
 
 export default nextConfig;

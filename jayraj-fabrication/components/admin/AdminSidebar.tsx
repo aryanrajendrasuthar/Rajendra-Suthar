@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
   LayoutDashboard,
@@ -11,7 +12,6 @@ import {
   Table2,
   Settings,
   X,
-  Diamond,
 } from "lucide-react";
 
 const NAV = [
@@ -55,16 +55,16 @@ export default function AdminSidebar({ open, onClose }: Props) {
         `}
       >
         {/* Logo */}
-        <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
-          <div className="flex items-center gap-3">
-            <div className="flex h-8 w-8 items-center justify-center rounded bg-jf-lime">
-              <Diamond className="h-4 w-4 text-black" />
-            </div>
-            <div>
-              <div className="text-sm font-bold leading-none text-white">JAYRAJ</div>
-              <div className="text-[10px] tracking-widest text-jf-lime">FABRICATION</div>
-            </div>
-          </div>
+        <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
+          <Link href="/" target="_blank">
+            <Image
+              src="/logo/jf-logo.jpeg"
+              alt="Jayraj Fabrication"
+              width={140}
+              height={40}
+              className="h-9 w-auto object-contain"
+            />
+          </Link>
           <button
             onClick={onClose}
             className="md:hidden rounded p-1 text-white/50 hover:text-white"

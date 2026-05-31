@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Diamond, Phone, Mail, MapPin } from "lucide-react";
+import Image from "next/image";
+import { Phone, Mail, MapPin } from "lucide-react";
 
 const NAV = [
   { href: "/",         label: "Home"     },
@@ -17,14 +18,14 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-2.5 mb-4">
-              <div className="flex h-9 w-9 items-center justify-center rounded bg-jf-lime">
-                <Diamond className="h-5 w-5 text-black" />
-              </div>
-              <div>
-                <div className="font-display text-lg font-bold leading-none text-white tracking-wider">JAYRAJ</div>
-                <div className="text-[9px] tracking-[0.3em] text-jf-lime leading-none">FABRICATION</div>
-              </div>
+            <div className="mb-4">
+              <Image
+                src="/logo/jf-logo.jpeg"
+                alt="Jayraj Fabrication"
+                width={160}
+                height={45}
+                className="h-10 w-auto object-contain"
+              />
             </div>
             <p className="text-sm text-white/40 leading-relaxed">
               Roofing Solutions Under One Roof. End-to-end fabrication since 2008.

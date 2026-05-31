@@ -7,8 +7,9 @@
 
 import { Suspense, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import Image from "next/image";
 import { createClient } from "@/lib/supabase/client";
-import { Eye, EyeOff, Diamond, AlertCircle, CheckCircle } from "lucide-react";
+import { Eye, EyeOff, AlertCircle, CheckCircle } from "lucide-react";
 
 type Mode = "login" | "forgot";
 
@@ -86,16 +87,16 @@ function LoginForm() {
       <div className="relative w-full max-w-sm">
         {/* Logo */}
         <div className="mb-8 flex flex-col items-center gap-3">
-          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-jf-lime">
-            <Diamond className="h-6 w-6 text-black" />
-          </div>
-          <div className="text-center">
-            <div className="font-display text-2xl font-bold uppercase tracking-wider text-white">
-              JAYRAJ FABRICATION
-            </div>
-            <div className="mt-0.5 text-xs tracking-[0.3em] text-white/40">
-              ADMIN PANEL
-            </div>
+          <Image
+            src="/logo/jf-logo.jpeg"
+            alt="Jayraj Fabrication"
+            width={200}
+            height={56}
+            className="h-14 w-auto object-contain"
+            priority
+          />
+          <div className="text-xs tracking-[0.3em] text-white/40 uppercase">
+            Admin Panel
           </div>
         </div>
 

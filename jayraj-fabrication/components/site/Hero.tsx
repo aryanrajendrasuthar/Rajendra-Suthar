@@ -1,7 +1,6 @@
-"use client";
-
 import Link from "next/link";
-import { ArrowRight, ChevronDown, Diamond } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, ChevronDown } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -34,13 +33,15 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pt-24 pb-20 lg:px-8">
         {/* Logo mark */}
-        <div className="mb-8 flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded bg-jf-lime">
-            <Diamond className="h-5 w-5 text-black" />
-          </div>
-          <span className="font-display text-sm font-bold tracking-[0.3em] text-white/60 uppercase">
-            Jayraj Fabrication
-          </span>
+        <div className="mb-8">
+          <Image
+            src="/logo/jf-logo.jpeg"
+            alt="Jayraj Fabrication"
+            width={180}
+            height={50}
+            className="h-12 w-auto object-contain"
+            priority
+          />
         </div>
 
         {/* Eyebrow */}

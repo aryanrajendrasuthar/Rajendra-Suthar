@@ -7,8 +7,9 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import { createClient } from "@/lib/supabase/client";
-import { Diamond, Eye, EyeOff, CheckCircle, AlertCircle } from "lucide-react";
+import { Eye, EyeOff, CheckCircle, AlertCircle } from "lucide-react";
 
 export default function ResetPasswordPage() {
   const [password, setPassword] = useState("");
@@ -47,12 +48,14 @@ export default function ResetPasswordPage() {
     <div className="flex min-h-screen items-center justify-center bg-jf-bg px-4">
       <div className="w-full max-w-sm">
         <div className="mb-8 flex flex-col items-center gap-3">
-          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-jf-lime">
-            <Diamond className="h-6 w-6 text-black" />
-          </div>
-          <div className="font-display text-2xl font-bold uppercase tracking-wider text-white">
-            JAYRAJ FABRICATION
-          </div>
+          <Image
+            src="/logo/jf-logo.jpeg"
+            alt="Jayraj Fabrication"
+            width={200}
+            height={56}
+            className="h-14 w-auto object-contain"
+            priority
+          />
         </div>
 
         <div className="rounded-2xl border border-white/10 bg-jf-bg-2 p-6">

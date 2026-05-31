@@ -9,7 +9,6 @@ import { useState, useMemo } from "react";
 import {
   angleSections, beamSections, channelSections, pipeSections,
   recTubeSections, sqrTubeSections, barFlatData,
-  type AngleSection, type BeamSection,
 } from "@/lib/steelData";
 import { Copy, Check, ExternalLink } from "lucide-react";
 import Link from "next/link";
@@ -33,6 +32,13 @@ function kg(n: number) {
   return n.toFixed(3) + " kg";
 }
 
+// Angle/Beam/Channel/Pipe use `.W`; RecTube/SqrTube use `.Wt` — check both
+function getSectionWeight(s: unknown): number {
+  if (!s) return 0;
+  const obj = s as Record<string, unknown>;
+  return Number(obj.W ?? obj.Wt ?? 0);
+}
+
 export default function SteelTablePage() {
   const [activeTab, setActiveTab] = useState<Tab>("angle");
   const [selectedIdx, setSelectedIdx] = useState(0);
@@ -53,7 +59,7 @@ export default function SteelTablePage() {
   }, [activeTab]);
 
   const selected = sections[selectedIdx] ?? null;
-  const weightPerMetre = selected ? (selected as AngleSection).W ?? (selected as BeamSection).W : 0;
+  const weightPerMetre = getSectionWeight(selected);
   const totalWeight = weightPerMetre * Number(length || 0);
   const totalPrice = totalWeight * Number(rate || 0);
 
