@@ -77,7 +77,7 @@ export default function Hero() {
             href="/contact"
             className="inline-flex items-center gap-2 rounded-lg border border-white/30 px-6 py-3.5 font-semibold text-white transition-all hover:border-white/60 hover:bg-white/5"
           >
-            GET A QUOTE
+            INQUIRE NOW
           </Link>
         </div>
 

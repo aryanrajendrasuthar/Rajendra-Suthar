@@ -68,9 +68,6 @@ export default function Navbar() {
           </ul>
 
           <div className="hidden items-center gap-3 lg:flex">
-            <Link href="/contact" className="btn-outline text-sm px-4 py-2">
-              Get a Quote
-            </Link>
             <Link
               href="/contact"
               className="btn-lime text-sm px-4 py-2"
