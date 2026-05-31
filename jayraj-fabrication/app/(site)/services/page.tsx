@@ -80,9 +80,9 @@ export default function ServicesPage() {
                 </div>
                 <h2 className="font-heading text-2xl font-bold text-white">{s.title}</h2>
                 <p className="text-white/60 leading-relaxed">{s.desc}</p>
-                <Link href="/contact"
+                <Link href={`#${s.slug}`}
                   className="inline-flex items-center gap-2 text-sm text-jf-lime hover:underline">
-                  Get a Quote <ArrowRight className="h-3.5 w-3.5" />
+                  Learn More <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </div>
               <div className="flex-shrink-0 lg:w-64">

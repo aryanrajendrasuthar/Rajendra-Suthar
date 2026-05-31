@@ -1,13 +1,15 @@
 import Link from "next/link";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden bg-jf-bg">
-      {/* Hero background video */}
+      {/* Hero background video — replace /video/hero-bg.mp4 with real footage */}
       <video
         className="absolute inset-0 h-full w-full object-cover opacity-30"
         autoPlay muted loop playsInline
+        poster="/images/hero/hero-poster.jpg"
       >
         <source src="/video/hero-bg.mp4" type="video/mp4" />
       </video>
@@ -30,6 +32,18 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pt-24 pb-20 lg:px-8">
+        {/* Logo mark */}
+        <div className="mb-8">
+          <Image
+            src="/logo/jf-logo.jpeg"
+            alt="Jayraj Fabrication"
+            width={180}
+            height={50}
+            className="h-12 w-auto object-contain"
+            priority
+          />
+        </div>
+
         {/* Eyebrow */}
         <p className="section-label mb-4 animate-fade-up">
           — ROOFING SOLUTIONS UNDER ONE ROOF —
@@ -94,12 +108,6 @@ export default function Hero() {
             </div>
           ))}
         </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-white/30">
-        <span className="text-xs tracking-widest uppercase">Scroll</span>
-        <ChevronDown className="h-4 w-4 animate-bounce-dot" />
       </div>
     </section>
   );
