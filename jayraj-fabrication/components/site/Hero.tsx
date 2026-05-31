@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowRight, ChevronDown } from "lucide-react";
 
 export default function Hero() {
@@ -9,7 +8,6 @@ export default function Hero() {
       <video
         className="absolute inset-0 h-full w-full object-cover opacity-30"
         autoPlay muted loop playsInline
-        poster="/images/hero/hero-poster.jpg"
       >
         <source src="/video/hero-bg.mp4" type="video/mp4" />
       </video>
@@ -32,18 +30,6 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pt-24 pb-20 lg:px-8">
-        {/* Logo mark */}
-        <div className="mb-8">
-          <Image
-            src="/logo/jf-logo.jpeg"
-            alt="Jayraj Fabrication"
-            width={180}
-            height={50}
-            className="h-12 w-auto object-contain"
-            priority
-          />
-        </div>
-
         {/* Eyebrow */}
         <p className="section-label mb-4 animate-fade-up">
           — ROOFING SOLUTIONS UNDER ONE ROOF —

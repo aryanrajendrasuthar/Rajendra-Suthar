@@ -43,7 +43,7 @@ export default function Navbar() {
               alt="Jayraj Fabrication"
               width={180}
               height={50}
-              className="h-10 w-auto object-contain"
+              className="h-12 w-auto object-contain"
               priority
             />
           </Link>

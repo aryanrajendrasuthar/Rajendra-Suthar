@@ -69,7 +69,7 @@ export default function ServicesPage() {
         {SERVICES.map((s, i) => {
           const Icon = s.icon;
           return (
-            <div key={s.slug}
+            <div id={s.slug} key={s.slug}
               className={`flex flex-col gap-8 rounded-2xl border border-white/10 bg-jf-bg-2 p-7 lg:flex-row ${i % 2 === 1 ? "lg:flex-row-reverse" : ""}`}>
               <div className="flex-1 space-y-4">
                 <div className="flex items-center gap-3">
@@ -80,9 +80,9 @@ export default function ServicesPage() {
                 </div>
                 <h2 className="font-heading text-2xl font-bold text-white">{s.title}</h2>
                 <p className="text-white/60 leading-relaxed">{s.desc}</p>
-                <Link href={`/services/${s.slug}`}
+                <Link href="/contact"
                   className="inline-flex items-center gap-2 text-sm text-jf-lime hover:underline">
-                  Learn More <ArrowRight className="h-3.5 w-3.5" />
+                  Get a Quote <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </div>
               <div className="flex-shrink-0 lg:w-64">
