@@ -1,0 +1,14 @@
+{
+  "rewrites": [
+    { "source": "/admin/(.*)", "destination": "/admin/$1" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Powered-By",  "value": "Jayraj Fabrication"    },
+        { "key": "X-Developer",   "value": "Aryan Rajendra Suthar" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+/**
+ * Jayraj Fabrication — Digital Ecosystem
+ * @author Aryan Rajendra Suthar <aryanrajendrasuthar@gmail.com>
+ * @license Private — See LICENSE.md
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── JF CSS Custom Properties ─── */
+:root {
+  --jf-lime:           #6BBF3A;
+  --jf-lime-dark:      #4A8A28;
+  --jf-lime-glow:      #8FD654;
+  --jf-bg-primary:     #0D0D0D;
+  --jf-bg-secondary:   #141414;
+  --jf-bg-tertiary:    #1C1C1C;
+  --jf-bg-section:     #111827;
+  --jf-light-bg:       #F8F8F6;
+  --jf-light-surface:  #FFFFFF;
+  --jf-light-border:   #E5E5E0;
+  --jf-text-primary:   #FFFFFF;
+  --jf-text-secondary: #A0A0A0;
+  --jf-text-tertiary:  #606060;
+  --jf-charcoal:       #1A1A1A;
+  --jf-gold:           #C9A84C;
+  --jf-steel:          #708090;
+  --jf-danger:         #E53E3E;
+  --jf-success:        #6BBF3A;
+}
+
+/* ─── Base ─── */
+@layer base {
+  html {
+    @apply antialiased;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-jf-bg text-white;
+    font-family: var(--font-inter), system-ui, sans-serif;
+  }
+
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: #141414; }
+  ::-webkit-scrollbar-thumb { background: #6BBF3A; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #8FD654; }
+
+  ::selection { background: #6BBF3A33; color: #6BBF3A; }
+
+  *:focus-visible {
+    outline: 2px solid #6BBF3A;
+    outline-offset: 2px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-barlow), sans-serif;
+    font-weight: 600;
+  }
+}
+
+/* ─── Components ─── */
+@layer components {
+  /* Admin cards + inputs */
+  .admin-card {
+    @apply rounded-xl border border-white/10 bg-jf-bg-2 p-4 md:p-6;
+  }
+
+  .admin-input {
+    @apply w-full rounded-lg border border-white/10 bg-jf-bg-3 px-3 py-2 text-sm text-white
+           placeholder:text-white/30 focus:border-jf-lime focus:outline-none focus:ring-1
+           focus:ring-jf-lime transition-colors;
+  }
+
+  .admin-label {
+    @apply block text-xs font-medium uppercase tracking-wider text-white/50 mb-1;
+  }
+
+  /* Buttons */
+  .btn-lime {
+    @apply inline-flex items-center gap-2 rounded-lg bg-jf-lime px-4 py-2 text-sm font-semibold
+           text-black transition-all hover:bg-jf-lime-glow active:scale-95 disabled:opacity-50
+           disabled:cursor-not-allowed;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 rounded-lg border border-white/20 px-4 py-2 text-sm
+           font-semibold text-white transition-all hover:border-white/40 hover:bg-white/5
+           active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-white/60
+           transition-all hover:bg-white/5 hover:text-white active:scale-95;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center gap-2 rounded-lg border border-red-500/30 bg-red-500/10
+           px-3 py-1.5 text-sm text-red-400 transition-all hover:bg-red-500/20 active:scale-95;
+  }
+
+  /* Quote / Inquiry status pills */
+  .status-draft     { @apply rounded-full bg-gray-500/20 px-2.5 py-0.5 text-xs font-medium text-gray-400; }
+  .status-sent      { @apply rounded-full bg-blue-500/20 px-2.5 py-0.5 text-xs font-medium text-blue-400; }
+  .status-approved  { @apply rounded-full bg-jf-lime/20 px-2.5 py-0.5 text-xs font-medium text-jf-lime; }
+  .status-rejected  { @apply rounded-full bg-red-500/20 px-2.5 py-0.5 text-xs font-medium text-red-400; }
+  .status-ordered   { @apply rounded-full bg-purple-500/20 px-2.5 py-0.5 text-xs font-medium text-purple-400; }
+  .status-new         { @apply rounded-full bg-amber-500/20 px-2.5 py-0.5 text-xs font-medium text-amber-400; }
+  .status-in_progress { @apply rounded-full bg-blue-500/20 px-2.5 py-0.5 text-xs font-medium text-blue-400; }
+  .status-converted   { @apply rounded-full bg-jf-lime/20 px-2.5 py-0.5 text-xs font-medium text-jf-lime; }
+  .status-closed      { @apply rounded-full bg-gray-500/20 px-2.5 py-0.5 text-xs font-medium text-gray-500; }
+
+  /* Public site typography */
+  .section-label {
+    @apply font-mono text-xs uppercase tracking-[0.2em] text-jf-lime;
+  }
+
+  .section-heading {
+    @apply font-display text-4xl font-bold uppercase leading-tight tracking-tight
+           md:text-5xl lg:text-6xl;
+  }
+
+  .section-subheading {
+    @apply text-lg text-white/60 leading-relaxed max-w-2xl;
+  }
+
+  /* Lime animated underline */
+  .lime-link {
+    @apply relative inline-block after:absolute after:bottom-0 after:left-0 after:h-0.5
+           after:w-0 after:bg-jf-lime after:transition-all after:duration-300
+           hover:after:w-full;
+  }
+}
+
+/* ─── Utilities ─── */
+@layer utilities {
+  .font-display { font-family: var(--font-barlow-condensed), sans-serif; }
+  .font-heading { font-family: var(--font-barlow), sans-serif; }
+  .font-mono-jf { font-family: var(--font-space-mono), monospace; }
+
+  .text-balance { text-wrap: balance; }
+
+  .gradient-lime {
+    @apply bg-gradient-to-r from-jf-lime to-jf-lime-glow bg-clip-text text-transparent;
+  }
+
+  .glass {
+    @apply backdrop-blur-md bg-white/5 border border-white/10;
+  }
+
+  .lime-glow {
+    box-shadow: 0 0 20px rgba(107, 191, 58, 0.3);
+  }
+
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+/* ─── Respect prefers-reduced-motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
